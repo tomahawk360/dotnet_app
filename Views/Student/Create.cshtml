@@ -1,0 +1,27 @@
+@model aspnetapp.Models.Student
+
+@{
+    ViewData["Title"] = "Student Page";
+}
+
+<div class="center-text">
+    <h1>Crear Estudiantes</h1>
+</div>
+
+@using (Html.BeginForm()) {
+    <div class="Head">
+        <h4>Estudiante</h4>
+        <hr>
+    </div>
+    <div class="Nombre">
+        @Html.LabelFor(m => m.studentName)
+        @Html.EditorFor(m => m.studentName)
+    </div>
+    <div class="Edad">
+        @Html.LabelFor(m => m.studentAge)
+        @Html.EditorFor(m => m.studentAge)
+    </div>
+    <div class="Submit">
+        <input type="submit" value="Save" class="submit">
+    </div>
+}

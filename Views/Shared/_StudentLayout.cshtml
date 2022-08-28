@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/platform.css" />
+</head>
+<body>
+    <header class="nav">
+        <div class="nav-header">
+            @Html.ActionLink("Estudiantes App", "Index")
+        </div>
+        <div class="nav-body">
+            <ul class="nav-body-list">
+                <li>@Html.ActionLink("Home", "Index")</li>
+                <li>@Html.ActionLink("Crear", "Create")</li>
+            </ul>
+        </div>
+        <div class="nav-user">
+            @if(Model.studentAge != 0) {
+                @Model.studentName
+            } else {
+                <h4>No estas ingresado</h4>
+                @Html.ActionLink("Ingresar", "Create")
+            }
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+</body>
+</html>

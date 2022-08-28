@@ -1,0 +1,29 @@
+@model aspnetapp.Models.Student
+
+@{
+    ViewData["Title"] = "Student Page";
+    Student modo = ViewBag.Student;
+}
+
+<div class="center-text">
+    <h1>Informacion de Estudiantes</h1>
+</div>
+
+<div class="info">
+    <div class="nombre">
+        @Html.DisplayFor(m => m.studentName)
+    </div>
+    <div class="edad">
+        @if(Model.studentAge != 0) {
+            @Html.DisplayFor(m => m.studentAge)
+        }
+    </div>
+</div>
+
+<div class="Crear">
+    @Html.ActionLink("Crear Estudiante", "Create")
+</div>
+
+<div class="Salir">
+    @Html.ActionLink("Salir", "Exit")
+</div>
